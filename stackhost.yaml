@@ -1,16 +1,19 @@
-user:
+User:
   name: "Gon"
   github: "SBKofficial"
 
 runtime:
-  image: "python:3.11-slim"
+  # Changed from -slim to full version to ensure system libraries exist
+  image: "python:3.11"
 
 commands:
-  package: ""
+  # Removed the empty "package" command causing the crash
   build:
+    - "pip install --upgrade pip"
     - "pip install -r requirements.txt"
   start: "python main.py"
 
 repository:
   branch: "main"
   auto_deploy: true
+  
