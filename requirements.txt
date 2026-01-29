@@ -1,0 +1,4 @@
+telethon
+aiosqlite
+python-dotenv
+
